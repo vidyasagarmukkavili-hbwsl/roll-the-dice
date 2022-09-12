@@ -2,37 +2,133 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #171b22;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Heading {
+  color: yellowgreen;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 12.5vh;
 }
 
-.App-link {
-  color: #61dafb;
+.container__box {
+  background-color: white;
+  width: 600px;
+  height: 350px;
+  display: flex;
+  border-radius: 30px;
+  overflow: none;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.player__box {
+  background-color: rgb(102, 130, 105);
+  width: 300px;
+  height: 350px;
+}
+
+#player-01__box {
+  background-color: rgb(54, 208, 70);
+}
+
+.total-score {
+  background-color: white;
+  color: black;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 50px auto auto auto;
+}
+
+.total-score-text {
+  margin: 0;
+  padding: 0;
+}
+
+.current-score {
+  background-color: white;
+  color: black;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 100px auto auto auto;
+}
+
+.current-score-text {
+  margin: 0;
+  padding: 0;
+}
+.current-score-value {
+  margin: 0;
+  margin-top: 7px;
+  padding: 0;
+  font-size: 1em;
+  color: olivedrab;
+}
+
+.player-name {
+  font-size: 0.7em;
+  margin: 0;
+  padding: 0;
+}
+
+.score-value {
+  font-size: 0.7em;
+  margin: 0;
+  padding: 0;
+}
+
+.controls-container {
+  z-index: 2;
+  position: absolute;
+  left: 250px;
+  top: 20px;
+}
+
+.controls {
+  z-index: 3;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* #roll-the-dice {
+  margin-top: 50px;
+} */
+
+.start-game {
+  margin-top: 20px;
+}
+
+/* #start-game{
+  
+} */
+
+.display-winner {
+  background-color: bisque;
+  color: #171b22;
+  margin-top: 40px;
+  width: 100px;
+  font-size: 1em;
+  height: 60px;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.dice-value {
+  background-color: #171b22;
+  /* height: 50px; */
+  width: 30px;
+  border-radius: 3px;
 }
