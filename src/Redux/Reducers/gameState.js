@@ -10,7 +10,7 @@ export const DEFAULT_GAME_STATE = {
     players: [
         {
         name: 'Player 01', 
-        score: 6, 
+        score: 0, 
         currentScore: 0, 
         isActive: false },
         { 

@@ -1,7 +1,6 @@
 import "./App.css";
 import React from "react";
 import { DEFAULT_GAME_STATE } from "./Redux/Reducers/gameState";
-// import { newPlayer, WINNING_POINT } from "../../App";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,13 +11,16 @@ class App extends React.Component {
       diceState: 1,
       countScore: false,
       WINNING_POINT: 100,
-      activePlayer: "",
+      activePlayer: "Pig Game!",
+      player01Color: { backgroundColor: "rgb(54, 208, 70)" },
+      player02Color: { backgroundColor: "rgb(54, 208, 70)" },
     };
 
     this.rollTheDice = this.rollTheDice.bind(this);
     this.restartGame = this.restartGame.bind(this);
     this.startGame = this.startGame.bind(this);
     this.scoreCounter = this.scoreCounter.bind(this);
+    this.colorSwitcher = this.colorSwitcher.bind(this);
   }
 
   startGame() {
@@ -35,6 +37,22 @@ class App extends React.Component {
     }
     // console.log(DEFAULT_GAME_STATE.gameLoaded);
   }
+
+  colorSwitcher = () => {
+    // styleStates = []
+
+    if (DEFAULT_GAME_STATE.players[0].isActive) {
+      this.setState((state) => ({
+        player01Color: { backgroundColor: "rgb(54, 208, 70)" },
+        player02Color: { backgroundColor: "rgb(102, 130, 105)" },
+      }));
+    } else {
+      this.setState((state) => ({
+        player02Color: { backgroundColor: "rgb(54, 208, 70)" },
+        player01Color: { backgroundColor: "rgb(102, 130, 105)" },
+      }));
+    }
+  };
 
   restartGame() {
     console.log(DEFAULT_GAME_STATE.gameLoaded);
@@ -192,6 +210,7 @@ class App extends React.Component {
 
     this.scoreCounter();
     this.playerSwitcher();
+    this.colorSwitcher();
     // console.log("Player count is - 0" + ((DEFAULT_GAME_STATE.count % 2) + 1));
 
     // ^` This is just for testing purposes
@@ -205,7 +224,11 @@ class App extends React.Component {
           <h1 className="Heading">Project 02: Roll the Dice!</h1>
 
           <div className="container__box">
-            <div className="player__box" id="player-01__box">
+            <div
+              className="player__box"
+              id="player-01__box"
+              style={this.state.player01Color}
+            >
               <div className="total-score">
                 <p className="total-score-text">Total Score</p>
                 <p className="player-name">Player 01</p>
@@ -222,7 +245,11 @@ class App extends React.Component {
               </div>
             </div>
 
-            <div className="player__box" id="player-02__box">
+            <div
+              className="player__box"
+              id="player-02__box"
+              style={this.state.player02Color}
+            >
               <div className="total-score">
                 <p className="total-score-text">Total Score</p>
                 <p className="player-name">Player 01</p>
