@@ -13,13 +13,20 @@ body {
 
 .Heading {
   color: yellowgreen;
+  /* margin-bottom: 30px; */
+  /* margin-top: 50px; */
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 12.5vh;
+  /* margin-top: 12.5vh; */
+  /* margin-top: auto; */
+  /* margin-bottom: auto; */
+  position: relative;
+  top: 50%;
+  transform: translateY(45%);
 }
 
 .container__box {
@@ -36,6 +43,7 @@ body {
   background-color: rgb(102, 130, 105);
   width: 300px;
   height: 350px;
+  transition: all 0.5s ease-in-out;
 }
 
 #player-01__box {
@@ -132,4 +140,6 @@ body {
   /* height: 50px; */
   width: 30px;
   border-radius: 3px;
+  margin-bottom: 0;
+  margin-top: 20px;
 }

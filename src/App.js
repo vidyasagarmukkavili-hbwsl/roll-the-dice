@@ -30,6 +30,7 @@ class App extends React.Component {
       this.setState((state) => ({
         buttonState: false,
         countScore: false,
+
         //shouldn't count yet when startGame is pressed
         //it should only start when player gets 6, after start game
       }));
@@ -62,7 +63,7 @@ class App extends React.Component {
       this.setState((state) => ({
         buttonState: true,
         countScore: false,
-        activePlayer: "",
+        activePlayer: "Pig Game!",
         //shouldn't count when restartGame is pressed
         //it should only start when player gets 6
       }));
@@ -146,13 +147,13 @@ class App extends React.Component {
 
       if (DEFAULT_GAME_STATE.players[0].score >= this.state.WINNING_POINT) {
         this.setState((state) => ({
-          activePlayer: "Winner is Player 01",
+          activePlayer: "<--Winner is Player 01",
         }));
       } else if (
         DEFAULT_GAME_STATE.players[1].score >= this.state.WINNING_POINT
       ) {
         this.setState((state) => ({
-          activePlayer: "Winner is Player 02",
+          activePlayer: "Winner is Player 02 -->",
         }));
       }
     }
@@ -222,7 +223,6 @@ class App extends React.Component {
       <div className="App">
         <div className="main-container">
           <h1 className="Heading">Project 02: Roll the Dice!</h1>
-
           <div className="container__box">
             <div
               className="player__box"
